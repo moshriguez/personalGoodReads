@@ -10,6 +10,7 @@ TODO:
 - separate concerns - mongodb and handler logic combined right now
 - compare grpc and rest api
     - maybe implement both for practice
+    - grpc is probably overkill
 - add memcache
 - implement endpoints:
     - AddBook - add a book to DB; will satisfy book ingestion
