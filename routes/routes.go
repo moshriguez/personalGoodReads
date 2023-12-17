@@ -9,7 +9,7 @@ func BookRoutes(app *fiber.App) {
 	// all routes interacting with book model
 	app.Post("/books", controllers.AddBook)
 	app.Get("/books/:bookID", controllers.GetBook)
-	app.Put("/books/:bookID", controllers.UpdateBook)
+	app.Patch("/books/:bookID", controllers.UpdateBook)
 	app.Delete("/books/:bookID", controllers.DeleteBook)
 	app.Get("/books", controllers.GetBooks)
 }
