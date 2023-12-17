@@ -7,7 +7,7 @@ Users of the app will log in and have full CRUD access to the DB, but this will 
 The app will track the books in my personal library. It will keep track of the books I've read. It will also track the books that were lost in the move. 
 
 TODO:
-- separate concerns - mongodb and handler logic combined right now
+- update update endpoint so partial updates do not clear existing data
 - compare grpc and rest api
     - maybe implement both for practice
     - grpc is probably overkill
