@@ -19,6 +19,8 @@ TODO:
     - UpdateBook - basic update endpoint. To be used for data correction
     - ReadBook - a special update to mark a book as read and record the timestamp
     - DeleteBook - soft deleted a book. Uses update method. entry remains in the DB
+        - currently implemented as a DELETE endpoint. need to create/update to soft delete
+        - may want to keep for data correction
 - have a faktory worker or some chron job to periodically refresh the cache to help with initial load time
 - update endpoints so logged in user only persist data to the DB; unlogged in users will only persist to the cache
 

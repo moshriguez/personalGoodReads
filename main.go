@@ -24,15 +24,4 @@ func main() {
 	routes.BookRoutes(app)
 
 	app.Listen(":3000")
-
-	// // init router
-	// router := mux.NewRouter()
-
-	// // endpoints
-	// router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-	// 	fmt.Fprintln(w, "Welcome to my library.")
-	// }).Methods("GET")
-	// if err := http.ListenAndServe(":3000", router); err != nil {
-	// 	log.Fatal(err)
-	// }
 }
