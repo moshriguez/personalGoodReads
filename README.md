@@ -1,16 +1,16 @@
 # personalGoodReads
 An app for keeping track of my books
 
-The app will consist of a Backend rest or grpc api (tbd)
-Users of the app will log in and have full CRUD access to the DB, but this will on be applied the the cache. Only a superuser will be able to make actual changes the the DB.
+The app will consist of a Backend rest or grpc api (tbd).
+Users of the app will log in and have full CRUD access to the data, but this will only be applied the the cache. Only a superuser will be able to make actual changes the the DB.
 
 The app will track the books in my personal library. It will keep track of the books I've read. It will also track the books that were lost in the move. 
 
 TODO:
 - update update endpoint so partial updates do not clear existing data
 - compare grpc and rest api
-    - maybe implement both for practice
-    - grpc is probably overkill
+    - we will implement both for practice
+    - grpc is probably overkill - but I'd like to do this since I work with this at work and this will demonstrate that I know how to use GRPC
 - add memcache
 - implement endpoints:
     - AddBook - add a book to DB; will satisfy book ingestion
@@ -23,4 +23,5 @@ TODO:
 - update endpoints so logged in user only persist data to the DB; unlogged in users will only persist to the cache
 
 Bugs:
-- 
+- does not launch with docker
+- update endpoint updates all fields, not just the ones passed in
