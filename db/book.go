@@ -58,14 +58,7 @@ func AddBook(ctx context.Context, book *models.Book) (*models.Book, error) {
 func UpdateBook(ctx context.Context, bookID string, book *models.Book) (*models.Book, error) {
 	objID, _ := primitive.ObjectIDFromHex(bookID)
 
-	update := bson.M{
-		"title":        book.Title,
-		"author":       book.Author,
-		"read":         book.Read,
-		"read_on":      book.ReadOn,
-		"lost_in_move": book.LostInMove,
-		"deleted":      book.Deleted,
-	}
+	update := buildUpdateObj(book)
 
 	result, err := BookCollection.UpdateOne(ctx, bson.M{"_id": objID}, bson.M{"$set": update})
 	if result.ModifiedCount == 0 {
@@ -85,6 +78,31 @@ func UpdateBook(ctx context.Context, bookID string, book *models.Book) (*models.
 	}
 
 	return &updatedBook, nil
+}
+
+func buildUpdateObj(book *models.Book) bson.D {
+	var updateObj bson.D
+
+	if book.Title != "" {
+		updateObj = append(updateObj, bson.E{Key: "title", Value: book.Title})
+	}
+	if book.Author != "" {
+		updateObj = append(updateObj, bson.E{Key: "author", Value: book.Author})
+	}
+	if book.Read {
+		updateObj = append(updateObj, bson.E{Key: "read", Value: book.Read})
+	}
+	if !book.ReadOn.IsZero() {
+		updateObj = append(updateObj, bson.E{Key: "read_on", Value: book.ReadOn})
+	}
+	if book.LostInMove {
+		updateObj = append(updateObj, bson.E{Key: "lost_in_move", Value: book.LostInMove})
+	}
+	if book.Deleted {
+		updateObj = append(updateObj, bson.E{Key: "deleted", Value: book.Deleted})
+	}
+
+	return updateObj
 }
 
 func DeleteBook(ctx context.Context, bookID string) error {
