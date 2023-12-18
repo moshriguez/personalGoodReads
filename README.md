@@ -26,4 +26,5 @@ TODO:
 
 Bugs:
 - does not launch with docker
-- update endpoint updates all fields, not just the ones passed in
+- update endpoint updates only the fields passed in, but will not allow bool fields be set back to false once set to true.
+    - could hold these values as strings in db and then convert? would need some validation before hitting db. - seems hacky
