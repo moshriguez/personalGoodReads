@@ -8,9 +8,10 @@ The app will track the books in my personal library. It will keep track of the b
 
 TODO:
 - update update endpoint so partial updates do not clear existing data
-- compare grpc and rest api
+- implement api to be called by either http or grpc
     - we will implement both for practice
     - grpc is probably overkill - but I'd like to do this since I work with this at work and this will demonstrate that I know how to use GRPC
+    - create proto file and generate go files
 - add memcache
 - implement endpoints:
     - AddBook - add a book to DB; will satisfy book ingestion
