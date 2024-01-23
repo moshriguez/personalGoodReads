@@ -4,9 +4,9 @@ go 1.19
 
 require (
 	github.com/gofiber/fiber/v2 v2.50.0
-	github.com/gorilla/mux v1.8.0
 	github.com/joho/godotenv v1.5.1
 	go.mongodb.org/mongo-driver v1.12.1
+	google.golang.org/protobuf v1.32.0
 )
 
 require (

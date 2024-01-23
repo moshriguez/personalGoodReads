@@ -1,5 +1,8 @@
-syntax = "proto3"
-option go_package = "./proto";
+syntax = "proto3";
+
+package PersonalLibraryService;
+
+option go_package = "./protos";
 
 import "google/protobuf/timestamp.proto";
 
@@ -26,7 +29,7 @@ message AddBookRequest {
 }
 
 message AddBookResponse {
-    bool success =1;
+    bool success = 1;
     Book book = 2;
 }
 
@@ -41,7 +44,7 @@ message GetBookResponse {
 message GetBooksRequest {}
 
 message GetBooksResponse {
-    Book book repeated = 1;
+    repeated Book book = 1;
 }
 
 message UpdateBookRequest {
@@ -49,7 +52,7 @@ message UpdateBookRequest {
 }
 
 message UpdateBookResponse {
-    bool success =1;
+    bool success = 1;
     Book book = 2;
 }
 
